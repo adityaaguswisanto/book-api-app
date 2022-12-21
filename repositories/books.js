@@ -4,7 +4,7 @@ class Book{
     static async create(title, author, summary, publisher){
         return new Promise(async (resolve, reject) => {
             try{
-                await books.create({
+                books.create({
                     title,
                     author,
                     summary,
@@ -22,7 +22,7 @@ class Book{
     static async update(id, title, author, summary, publisher){
         return new Promise(async (resolve, reject) => {
             try{
-                await books.update({
+                books.update({
                     title,
                     author,
                     summary,
@@ -44,7 +44,7 @@ class Book{
     static async get(){
         return new Promise(async (resolve, reject) => {
             try{
-                await books.findAll().then((data) => {
+                books.findAll().then((data) => {
                     resolve(data);
                 });
             }catch(error){
@@ -57,7 +57,7 @@ class Book{
     static async find(id){
         return new Promise(async (resolve, reject) => {
             try{
-                await books.findOne(
+                books.findOne(
                     {
                         where : {
                             id : id
@@ -76,7 +76,7 @@ class Book{
     static async destroy(id){
         return new Promise(async (resolve, reject) => {
             try{
-                await books.destroy(
+                books.destroy(
                     {
                         where : {
                             id : id
